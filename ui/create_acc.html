@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <img
+            src="./images/twitter-svg.svg"
+            id="icon"
+            alt="User Icon"
+            style="width: 100px; height: 80px;"
+          />
+        </div>
+
+        <!-- Login Form -->
+        <form>
+          <input
+            type="text"
+            id="FullName"
+            class="fadeIn second"
+            name="FullName"
+            placeholder="Full Name"
+          />
+          <input
+            type="text"
+            id="userName"
+            class="fadeIn second"
+            name="userName"
+            placeholder="User Name"
+          />
+          <input
+            type="text"
+            id="password"
+            class="fadeIn third"
+            name="login"
+            placeholder="password"
+          />
+          <div
+            class="form-group"
+            style="padding-left: 30px; padding-right: 30px; padding-top: 5px;"
+          >
+            <select
+              class="form-control text-light"
+              id="exampleFormControlSelect1"
+              style="background-color: #56baed;"
+            >
+              <option>Private</option>
+              <option>public</option>
+              <option>Followings only</option>
+            </select>
+          </div>
+
+          <input type="submit" class="fadeIn fourth" value="Create Account" />
+        </form>
+
+        <!-- Remind Passowrd -->
+      </div>
+    </div>
+  </body>
+</html>
