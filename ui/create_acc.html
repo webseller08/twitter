@@ -42,12 +42,12 @@
         </div>
 
         <!-- Login Form -->
-        <form>
+        <form action="/createUser" method="POST">
           <input
             type="text"
             id="FullName"
             class="fadeIn second"
-            name="FullName"
+            name="fullName"
             placeholder="Full Name"
           />
           <input
@@ -61,7 +61,7 @@
             type="text"
             id="password"
             class="fadeIn third"
-            name="login"
+            name="password"
             placeholder="password"
           />
           <div
@@ -72,6 +72,7 @@
               class="form-control text-light"
               id="exampleFormControlSelect1"
               style="background-color: #56baed;"
+              name="acctype"
             >
               <option>Private</option>
               <option>public</option>

@@ -17,6 +17,7 @@
       rel="stylesheet"
       id="bootstrap-css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./js/login.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -46,26 +47,41 @@
         <form>
           <input
             type="text"
-            id="login"
+            id="userName"
             class="fadeIn second"
-            name="login"
-            placeholder="login"
+            name="userName"
+            placeholder="username"
           />
           <input
             type="text"
             id="password"
             class="fadeIn third"
-            name="login"
+            name="password"
             placeholder="password"
           />
-          <input type="submit" class="fadeIn fourth" value="Log In" />
+          <button
+            type="button"
+            id="login_button"
+            class="btn btn-outline-info"
+            onclick="validateUser()"
+          >
+            Login
+          </button>
         </form>
 
-        <button type="button" id="create_acc_login" class="btn btn-primary">
+        <br />
+        <a
+          type="button"
+          id="create_acc_login"
+          href="/signup"
+          class="btn btn-primary"
+        >
           Create Account
-        </button>
+        </a>
         <!-- Remind Passowrd -->
       </div>
     </div>
   </body>
+
+  <script></script>
 </html>
