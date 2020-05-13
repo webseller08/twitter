@@ -3,6 +3,8 @@ const path = require("path");
 
 //function to send the details of user given array of anything to compare
 //it can be a username or list of usernames
+//what you want to comapre will be placesd after where
+//list will be places in set after in
 async function sendDetailsOfUsers(res, listToComapre, what) {
   var uniqueList;
   if (!Array.isArray(listToComapre)) {
