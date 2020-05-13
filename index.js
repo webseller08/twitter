@@ -12,7 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "ui")));
 app.use(cookieParser());
 //routes
-app.use("/", require("./server/routes/loginSignup"));
+app.use("/", require("./server/routes/loginSignupRouter"));
+app.use("/chat", require("./server/routes/chatRouter"));
 //app listening
 
 const port = process.env.PORT || 5000;
