@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 var app = express();
@@ -9,6 +10,7 @@ var app = express();
 //midlewares
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "ui")));
+app.use(cookieParser());
 //routes
 app.use("/", require("./server/routes/loginSignup"));
 //app listening
