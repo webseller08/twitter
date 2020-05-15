@@ -51,6 +51,11 @@ function clearCookies(res) {
     res.clearCookie("accountType");
     res.clearCookie("uid");
     res.clearCookie("fullName");
+    res.clearCookie("currentCID");
+    res.clearCookie("convoUser1");
+    res.clearCookie("convoUser2");
+    res.clearCookie("convoWith");
+    res.clearCookie("username2");
   } catch (error) {}
 }
 

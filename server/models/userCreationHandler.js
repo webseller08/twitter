@@ -6,7 +6,7 @@ function createUser(user) {
 
   require("./DBConfiguration").getConnection((err, conn) => {
     conn.query(
-      `INSERT INTO Users (username,fullname,account_type,password) VALUES ('${username}','${fullname}','${acctype}','${password}')`,
+      `INSERT INTO Users (username,fullname,account_type,password,desc) VALUES ('${username}','${fullname}','${acctype}','${password}')`,
       (error, result) => {
         if (err) throw error;
       }
