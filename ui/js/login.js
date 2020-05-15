@@ -17,7 +17,7 @@ function validateUser() {
           document.cookie = `userName:${data.userName}`;
           console.log("set cookies");
           console.log(document.cookie);
-          window.location.href = "http://localhost:5000/chat";
+          window.location.href = "http://localhost:5000/signup";
         } else {
           alert("no man u cannot fool me ");
         }

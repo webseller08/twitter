@@ -23,13 +23,7 @@ function setConversationEnvironment(conversationWith) {
       `http://localhost:5000/chat/getConversationID?userOne=${idOfLoggedInUser}&userTwo=${conversationWith}`,
       function (data) {
         var cid = data[0].c_id;
-        $.get(
-          `http://localhost:5000/chat/detailsOfUsers?on=user_id&data=[${idOfLoggedInUser},${conversationWith}]`,
-          (data) => {
-            document.cookie = `username2:${data[1].username}`;
-            document.cookie = `username3:nd`;
-          }
-        );
+
         console.log(cid);
         document.cookie = `CID:${cid}`;
         globalCID = cid;
@@ -40,7 +34,8 @@ function setConversationEnvironment(conversationWith) {
 }
 
 function allFunctionsToCall() {
-  setConversationEnvironment(11);
+  var num = Number(getCookie("chatWith"));
+  setConversationEnvironment(num);
 }
 
 function getDetailsOfUsers(uids) {}
@@ -128,6 +123,9 @@ function populateMessages() {
 
 function postMessage() {
   var text = $("#type_message").val();
+  if (text == "") {
+    return;
+  }
   var from = getCookie("uid");
   var cid = getCookie("currentCID");
 

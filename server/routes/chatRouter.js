@@ -6,6 +6,7 @@ const userDetailHandler = require("../models/userDetailsHandler");
 const router = express.Router();
 
 router.get("/", (req, res) => {
+  res.cookie("chatWith", req.param("chatWith"));
   res.sendFile(path.resolve(__dirname + "/../../ui/chat.html"));
 });
 

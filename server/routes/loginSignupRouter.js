@@ -54,8 +54,8 @@ function clearCookies(res) {
     res.clearCookie("currentCID");
     res.clearCookie("convoUser1");
     res.clearCookie("convoUser2");
+    res.clearCookie("chatWith");
     res.clearCookie("convoWith");
-    res.clearCookie("username2");
   } catch (error) {}
 }
 
