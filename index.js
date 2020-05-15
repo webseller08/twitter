@@ -14,6 +14,7 @@ app.use(cookieParser());
 //routes
 app.use("/", require("./server/routes/loginSignupRouter"));
 app.use("/chat", require("./server/routes/chatRouter"));
+app.use("/profile", require("./server/routes/profileRouter"));
 //app listening
 
 const port = process.env.PORT || 5000;
