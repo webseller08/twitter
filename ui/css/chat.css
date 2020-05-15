@@ -1,6 +1,11 @@
+body {
+  background-color: #162447;
+}
+
 .container {
-  max-width: 1170px;
+  max-width: 1300px;
   margin: auto;
+  box-shadow: 0 50px 50px #ff6666;
 }
 img {
   max-width: 100%;
@@ -112,9 +117,9 @@ img {
   width: 92%;
 }
 .received_withd_msg p {
-  background: #ebebeb none repeat scroll 0 0;
+  background: #ff6666 none repeat scroll 0 0;
   border-radius: 3px;
-  color: #646464;
+  color: #fff;
   font-size: 14px;
   margin: 0;
   padding: 5px 10px 5px 12px;
@@ -131,12 +136,13 @@ img {
 }
 .mesgs {
   float: left;
-  padding: 30px 15px 0 25px;
-  width: 60%;
+  padding: 10px 25px 0 5px;
+  margin-left: 10%;
+  width: 80%;
 }
 
 .sent_msg p {
-  background: #05728f none repeat scroll 0 0;
+  background: #66cccc none repeat scroll 0 0;
   border-radius: 3px;
   font-size: 14px;
   margin: 0;
@@ -183,5 +189,6 @@ img {
 }
 .msg_history {
   height: 516px;
+  padding: 50px;
   overflow-y: auto;
 }
