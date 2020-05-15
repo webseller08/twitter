@@ -52,49 +52,14 @@
 
     <div class="container-fluid">
       <div class="container-fluid">
-        <div class="cotainer justify-content-center d-flex">
-          <img
-            src="../assets/logo.png"
-            alt=""
-            class="rounded float-left"
-            height="150px"
-            data-toggle="modal"
-            data-target=".bd-example-modal-lg"
-          />
+        <button class="btn btn-primary" style="margin-top: 30px;" onclick="populateMessages()">New Message</button>
 
-          <div
-            class="modal fade bd-example-modal-lg"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="myLargeModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-sm" role="document">
-              <div class="modal-content">
-                <a
-                  href="http://localhost:3301/selectChatRoom"
-                  type="button"
-                  class="btn btn-outline-dark"
-                  >chatrooms</a
-                >
-
-                <a
-                  href="http://localhost:3301/logout"
-                  type="button"
-                  class="btn btn-outline-dark"
-                  >logout</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="messaging">
+        <div style="padding-top: 30px;"class="messaging">
           <div
             class="mesgs bg-white shadow-lg"
             style="box-shadow: 0 1rem 3rem #e43f5a  !important;"
           >
-            <div id="all_messages" class="msg_history">
+            <div id="all_messages" class="msg_history" >
              
             </div>
             <div class="type_msg">
@@ -105,12 +70,12 @@
                   class="write_msg"
                   placeholder="Type a message"
                 />
+                
+                
                 <button id="send_message" class="msg_send_btn" type="button" onclick="postMessage()">
                   <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                 </button>
-                <button>
-                  <i class="fab fa-rev"></i>
-                </button>
+                
               </div>
             </div>
           </div>

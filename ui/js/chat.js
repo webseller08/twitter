@@ -75,6 +75,7 @@ function getCookie(cname) {
 }
 
 function populateMessages() {
+  scrollToBottom();
   $("#all_messages").empty();
   var cid = getCookie("currentCID");
   console.log(`loging cid ${cid}`);
@@ -122,6 +123,7 @@ function populateMessages() {
 }
 
 function postMessage() {
+  scrollToBottom();
   var text = $("#type_message").val();
   if (text == "") {
     return;
@@ -136,4 +138,9 @@ function postMessage() {
       populateMessages();
     }
   );
+}
+
+function scrollToBottom() {
+  var objDiv = document.getElementById("all_messages");
+  objDiv.scrollTop = objDiv.scrollHeight;
 }
