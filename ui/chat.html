@@ -11,8 +11,6 @@
     <title>Leets chat</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="./js/chat.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -20,13 +18,15 @@
       crossorigin="anonymous"
     />
 
+    <link rel="stylesheet" href="./css/chat.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
       type="text/css"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./css/chat.css">
+    <script src="./js/chat.js"></script>
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       crossorigin="anonymous"
@@ -50,17 +50,59 @@
       </p>
     <![endif]-->
 
-    <div class="container-fluid">
+    <div class="container-fluid bg-warning" style="background-color: #dddddd;">
       <div class="container-fluid">
-        <button class="btn btn-primary" style="margin-top: 30px;" onclick="populateMessages()">New Message</button>
+        <div class="cotainer justify-content-center d-flex">
+          <img
+            src="./images/twitter-svg.svg"
+            alt=""
+            class="rounded float-left"
+            height="150px"
+            data-toggle="modal"
+            data-target=".bd-example-modal-lg"
+          />
 
-        <div style="padding-top: 30px;"class="messaging">
+          <div
+            class="modal fade bd-example-modal-lg"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="myLargeModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <a
+                  href="http://localhost:3301/selectChatRoom"
+                  type="button"
+                  class="btn btn-outline-dark"
+                  >chatrooms</a
+                >
+
+                <a
+                  href="http://localhost:5000/login"
+                  type="button"
+                  class="btn btn-outline-dark"
+                  >logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="messaging">
+          <button
+            class="btn btn-primary"
+            style="margin-top: 50px;"
+            onclick="populateMessages()"
+          >
+            Refresh
+          </button>
           <div
             class="mesgs bg-white shadow-lg"
-            style="box-shadow: 0 1rem 3rem #e43f5a  !important;"
+            style="box-shadow: 0 1rem 3rem #cc0066 !important;"
           >
-            <div id="all_messages" class="msg_history" >
-             
+            <div id="all_messages" class="msg_history">
+              <br />
             </div>
             <div class="type_msg">
               <div class="input_msg_write">
@@ -70,12 +112,14 @@
                   class="write_msg"
                   placeholder="Type a message"
                 />
-                
-                
-                <button id="send_message" class="msg_send_btn" type="button" onclick="postMessage()">
+                <button
+                  id="send_message"
+                  class="msg_send_btn"
+                  type="button"
+                  onclick="postMessage()"
+                >
                   <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                 </button>
-                
               </div>
             </div>
           </div>
@@ -85,7 +129,6 @@
   </body>
 </html>
 
-</style>
 <script>
   $(document).ready(allFunctionsToCall());
 </script>

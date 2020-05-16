@@ -2,10 +2,11 @@ const express = require("express");
 const path = require("path");
 const chatHandler = require("../models/chatHandler");
 const userDetailHandler = require("../models/userDetailsHandler");
-
+const validator = require("../validator");
 const router = express.Router();
 
 router.get("/", (req, res) => {
+  validator.validateUser(req, res);
   res.cookie("chatWith", req.param("chatWith"));
   res.sendFile(path.resolve(__dirname + "/../../ui/chat.html"));
 });
@@ -27,12 +28,10 @@ router.get("/getConversationID", (req, res) => {
 });
 
 router.get("/getMessagesOfCID", (req, res) => {
-  console.log(req.param("cid"));
   chatHandler.getMessagesOfCID(req, res);
 });
 
 router.get("/userFromID", (req, res) => {
-  console.log("in");
   chatHandler.getUserFromID(req, res);
 });
 
