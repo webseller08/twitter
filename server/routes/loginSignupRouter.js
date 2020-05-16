@@ -3,6 +3,7 @@ const path = require("path");
 const router = express.Router();
 
 router.get("/login", (req, res) => {
+  clearCookies(res);
   res.sendFile(path.resolve(__dirname + "/../../ui/login.html"));
 });
 
@@ -56,6 +57,7 @@ function clearCookies(res) {
     res.clearCookie("convoUser2");
     res.clearCookie("chatWith");
     res.clearCookie("convoWith");
+    res.clearCookie("CID");
   } catch (error) {}
 }
 

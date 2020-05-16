@@ -75,6 +75,7 @@ function getCookie(cname) {
 }
 
 function populateMessages() {
+  scrollToBottom();
   $("#all_messages").empty();
   var cid = getCookie("currentCID");
   console.log(`loging cid ${cid}`);
@@ -103,7 +104,7 @@ function populateMessages() {
         }
         $("#all_messages").append(`
         <div class="card shadow-sm" style="margin-top: 3px;${applyColor}">
-        <div class="card-body">
+        <div class="card-body" >
           <h5
             class="card-title justify-content-center d-flex font-weight-light"
             style="color: #cc0066;"
@@ -122,7 +123,9 @@ function populateMessages() {
 }
 
 function postMessage() {
+  scrollToBottom();
   var text = $("#type_message").val();
+  $("#type_message").val("");
   if (text == "") {
     return;
   }
@@ -136,4 +139,9 @@ function postMessage() {
       populateMessages();
     }
   );
+}
+
+function scrollToBottom() {
+  var objDiv = document.getElementById("all_messages");
+  objDiv.scrollTop = objDiv.scrollHeight;
 }
