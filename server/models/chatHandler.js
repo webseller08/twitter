@@ -90,7 +90,6 @@ function getConversationID(req, res) {
 
 function getMessagesOfCID(req, res) {
   var cid = req.param("cid");
-  console.log(cid);
 
   DBConfiguration.getConnection(function (err, conn) {
     if (err) {
