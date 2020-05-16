@@ -2,14 +2,24 @@ const express = require("express");
 const path = require("path");
 const router = express.Router();
 
+router.get("/", (req, res) => {
+  try {
+    if (req.cookies.userName) {
+      res.redirect("http://localhost:5000/home");
+    } else {
+      res.redirect("http://localhost:5000/login");
+    }
+  } catch (error) {
+    res.redirect("http://localhost:5000/login");
+  }
+});
+
 router.get("/login", (req, res) => {
   clearCookies(res);
   res.sendFile(path.resolve(__dirname + "/../../ui/login.html"));
 });
 
 router.get("/signup", (req, res) => {
-  console.log("login cookies");
-  console.log(req.cookies);
   res.sendFile(path.resolve(__dirname + "/../../ui/create_acc.html"));
 });
 

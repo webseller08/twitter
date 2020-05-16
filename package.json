@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "setDB": "mysql -u root -p < Twitter-clone-db-script.sql"
   },
   "author": "Muneeb Ur Rehman,Abdul Wajid,Syed Sajjad",
   "license": "ISC",

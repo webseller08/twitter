@@ -3,10 +3,11 @@ function createUser(user) {
   var fullname = user.fullName;
   var password = user.password;
   var acctype = user.acctype;
+  var desc = user.desc;
 
   require("./DBConfiguration").getConnection((err, conn) => {
     conn.query(
-      `INSERT INTO Users (username,fullname,account_type,password,desc) VALUES ('${username}','${fullname}','${acctype}','${password}')`,
+      `INSERT INTO Users (username,fullname,account_type,password,description) VALUES ('${username}','${fullname}','${acctype}','${password}','${desc}',)`,
       (error, result) => {
         if (err) throw error;
       }

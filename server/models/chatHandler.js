@@ -77,7 +77,6 @@ function getConversationID(req, res) {
           return;
         }
 
-        console.log(result[0]);
         res.cookie("currentCID", result[0].c_id);
 
         res.cookie("convoUser1", result[0].user_one);
@@ -91,7 +90,6 @@ function getConversationID(req, res) {
 
 function getMessagesOfCID(req, res) {
   var cid = req.param("cid");
-  console.log(cid);
 
   DBConfiguration.getConnection(function (err, conn) {
     if (err) {
