@@ -7,6 +7,7 @@
 - install npm if havent installed yet
 - install mysql if havent installed
 - run this command to set up database `npm run setDB`
+- if this fails on windows : run sql script manually
 - create **.env** file
 - copy everything from _env_sample_ and insert in **.env** file
 - initialize every environment variable in env file with your own db credentials
