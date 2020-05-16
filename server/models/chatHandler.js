@@ -77,7 +77,6 @@ function getConversationID(req, res) {
           return;
         }
 
-        console.log(result[0]);
         res.cookie("currentCID", result[0].c_id);
 
         res.cookie("convoUser1", result[0].user_one);

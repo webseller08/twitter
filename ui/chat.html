@@ -51,6 +51,47 @@
     <![endif]-->
 
     <div class="container-fluid bg-warning" style="background-color: #dddddd;">
+      <!--
+        help start
+      -->
+      <button
+        type="button"
+        class="btn btn-info"
+        data-toggle="modal"
+        data-target=".bd-modal-lg-help"
+      >
+        Help
+      </button>
+
+      <div
+        class="modal fade bd-modal-lg-help"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myLargeModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <p>
+              <ul>
+
+              <li>Click On Twitter Logo for Options </li>
+              
+              <ol>
+                <li>Go To Home</li>
+                <li>LogOut</li>
+              </ol>
+              <li>To check new Messages click on refresh </li>
+              <li>Type Message And press send button to send</li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--
+  help end
+-->
       <div class="container-fluid">
         <div class="cotainer justify-content-center d-flex">
           <img
@@ -97,6 +138,7 @@
           >
             Refresh
           </button>
+
           <div
             class="mesgs bg-white shadow-lg"
             style="box-shadow: 0 1rem 3rem #cc0066 !important;"

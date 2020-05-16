@@ -8,8 +8,6 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  console.log("login cookies");
-  console.log(req.cookies);
   res.sendFile(path.resolve(__dirname + "/../../ui/create_acc.html"));
 });
 
