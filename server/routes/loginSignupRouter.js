@@ -41,7 +41,7 @@ router.get("/validateUser", async (req, res) => {
 function validateUser(connectionError, connection, req, res) {
   //throw error if there is error in making connection
   if (connectionError) {
-    throw error;
+    throw connectionError;
   }
   //if there is no error then perform query
   //pass query as first parameter and callback as 2nd

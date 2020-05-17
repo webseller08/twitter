@@ -4,14 +4,13 @@ function createUser(user) {
   var password = user.password;
   var acctype = user.acctype;
   var desc = user.desc;
+  var sql = `INSERT INTO Users (username,fullname,account_type,password,description) VALUES ('${username}','${fullname}','${acctype}','${password}','${desc}')`;
 
+  console.log(sql);
   require("./DBConfiguration").getConnection((err, conn) => {
-    conn.query(
-      `INSERT INTO Users (username,fullname,account_type,password,description) VALUES ('${username}','${fullname}','${acctype}','${password}','${desc}',)`,
-      (error, result) => {
-        if (err) throw error;
-      }
-    );
+    conn.query(sql, (error, result) => {
+      if (err) throw error;
+    });
     conn.release();
   });
 }

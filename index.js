@@ -10,11 +10,13 @@ var app = express();
 //midlewares
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "ui")));
+app.use(express.static(path.join(__dirname, "views")));
 app.use(cookieParser());
 //routes
 app.use("/", require("./server/routes/loginSignupRouter"));
 app.use("/chat", require("./server/routes/chatRouter"));
 app.use("/profile", require("./server/routes/profileRouter"));
+app.use("/home", require("./server/routes/homeRouter"));
 //app listening
 
 const port = process.env.PORT || 5000;
