@@ -209,6 +209,7 @@ function displayHome(req, res, uid, search) {
                             } else {
                               var userDetails = {
                                 name: result1[0].username,
+                                desc: result1[0].description,
                                 fullname: result1[0].fullname,
                                 followersCount: result2[0].count,
                                 followingsCount: result2[1].count,

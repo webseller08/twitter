@@ -55,7 +55,6 @@
       <a href="/home" class="navbar-brand" style="color: #1c94e6">Twitter-Clone</a>
       <a href="/home" class="navbar-brand">Home</a>
       <a href="/profile" class="navbar-brand">Profile</a>
-      <a href="/login" class="navbar-brand">Logout</a>
       <form class="form-inline" action="/home" method="GET">
         <div class="input-group">
           <input
@@ -76,6 +75,48 @@
           </div>
         </div>
       </form>
+     
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" style="margin-left:550px;">
+  Help
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Guide</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>For new Tweet
+            <ol>
+              <li>type in box below</li>
+              <li>click share</li>
+            </ol>
+          </li>
+          <li>News Feed below new tweet will show all the tweets of people you are following and your own.</li>
+          <li>Click on search bar to search tweets with specifc text <b>Remember to come back on home after search by clicking home</b></li>
+          <li>Click on profile to view profile of logged in user</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">understood</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--model help end-->
+      <a  href="/login" class="btn btn-warning" style="margin-left: auto;">Log Out</a>
+        
+      
+      
     </nav>
 
     <div class="container-fluid gedf-wrapper">
@@ -86,7 +127,7 @@
               <div class="h5"><%=userDetails.name%></div>
               <div class="h7 text-muted">Fullname : <%=userDetails.fullname%></div>
               <div class="h7">
-                This is my @official Twitter-Clone.<br>Follow me if you like my tweets.
+                Description : <%=userDetails.desc%>
               </div>
             </div>
             <ul class="list-group list-group-flush">
