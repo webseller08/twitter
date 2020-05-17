@@ -652,8 +652,11 @@ $.get(
         userID=data[0].user_id;
 
         if(loggedInUserID==userID){
-      document.getElementById("chatButtonID").disabled= true;      
-      document.getElementById("followButton").disabled=true;
+      document.getElementById("chatButtonID").remove();   
+      document.getElementById("followButton").remove();      
+      // document.getElementById("followButton").disabled=true;
+      // document.getElementById("followButton").style.background='#cccccc'
+      // document.getElementById("chatButtonID").style.background='#cccccc'
       }  else{
 
         $.get(
@@ -690,7 +693,8 @@ $.get(
       `http://localhost:5000/profile/'${profileUser}'/userDetails`,
       (data) => {
         userID=data[0].user_id;
-        $.get(`http://localhost:5000/chat?chatWith='${userID}'`);
+        window.location.href=`http://localhost:5000/chat?chatWith=${userID}`
+        
       } 
     );
 
