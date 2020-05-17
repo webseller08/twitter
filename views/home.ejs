@@ -1,0 +1,299 @@
+
+  <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta lang="en" />
+    <title>Home</title>
+    <meta name="description" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="../server/routes/homeRouter.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+   <!--  <nav class="navbar navbar-light bg-white"> -->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <a href="/home" class="navbar-brand" style="color: #1c94e6">Twitter-Clone</a>
+      <a href="/home" class="navbar-brand">Home</a>
+      <a href="/profile" class="navbar-brand">Profile</a>
+      <a href="/login" class="navbar-brand">Logout</a>
+      <form class="form-inline" action="/home" method="GET">
+        <div class="input-group">
+          <input
+            name = "search"
+            type="text"
+            class="form-control"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-primary"
+              type="submit"
+              id="button-addon2"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </nav>
+
+    <div class="container-fluid gedf-wrapper">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="h5"><%=userDetails.name%></div>
+              <div class="h7 text-muted">Fullname : <%=userDetails.fullname%></div>
+              <div class="h7">
+                This is my @official Twitter-Clone.<br>Follow me if you like my tweets.
+              </div>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="h6 text-muted">Followers</div>
+                <div class="h5"><%=userDetails.followersCount%></div>
+              </li>
+              <li class="list-group-item">
+                <div class="h6 text-muted">Following</div>
+                <div class="h5"><%=userDetails.followingsCount%></div>
+              </li>
+              <li class="list-group-item"><%=userDetails.accountType%></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 gedf-main">
+
+
+
+
+          <!--- \\\\\\\Post-->
+        <form action="/home/storeTweet" method="GET">
+          <div class="card gedf-card">
+            <div class="card-header">
+              <ul
+                class="nav nav-tabs card-header-tabs"
+                id="myTab"
+                role="tablist"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    id="posts-tab"
+                    data-toggle="tab"
+                    href="#posts"
+                    role="tab"
+                    aria-controls="posts"
+                    aria-selected="true"
+                    >New Tweet</a
+                  >
+                </li>
+                
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="posts"
+                  role="tabpanel"
+                  aria-labelledby="posts-tab"
+                >
+                  <div class="form-group">
+                    <label class="sr-only" for="message">post</label>
+                    <textarea
+                      name="newTweet"
+                      class="form-control"
+                      id="message"
+                      rows="3"
+                      placeholder="What are you thinking?"
+                      maxlength="280"
+                    ></textarea>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="images"
+                  role="tabpanel"
+                  aria-labelledby="images-tab"
+                >
+                  <div class="form-group">
+                    <div class="custom-file">
+                      <input
+                        type="file"
+                        class="custom-file-input"
+                        id="customFile"
+                      />
+                      <label class="custom-file-label" for="customFile"
+                        >Upload image</label
+                      >
+                    </div>
+                  </div>
+                  <div class="py-4"></div>
+                </div>
+              </div>
+              <div class="btn-toolbar justify-content-between">
+                <div class="btn-group">
+                  <button type="submit" class="btn btn-primary">share</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        
+        
+
+
+
+
+
+
+
+          <!--- \\\\\\\Post-->
+          <% for (var i =0; i < tweets.length;  i++ ) {%>        
+          <div class="card gedf-card">
+            <div class="card-header">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="mr-2">
+                    <img
+                      class="rounded-circle"
+                      width="45"
+                      src="https://picsum.photos/50/50"
+                      alt=""
+                    />
+                  </div>
+                  <div class="ml-2">
+                    <div class="h5 m-0"><%=tweets[i].username%></div>
+                    <div class="h7 text-muted"><%=tweets[i].fullname%></div>
+                  </div>
+                </div>
+                <div>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="text-muted h7 mb-2">
+                <i class="fa fa-clock-o"><%=(tweets[i].time).toString().substring(0, (tweets[i].time).toString().length - 34)%></i>
+              </div>
+              <a class="card-link" href="#">
+                <h5 class="card-title">
+                   <%=(tweets[i].text).substring(0, 10);%>
+                </h5>
+              </a>
+              <p class="card-text">
+               <%=tweets[i].text%>
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="/home/like?tweet_id=<%=tweets[i].tweet_id%>" class="card-link"
+                ><i class="fa fa-gittip">Like</i></a>
+              <!-- <a href="/home/comment?tweet_id=<%=tweets[i].tweet_id%>" class="card-link"
+                ><i class="fa fa-comment">Comment</i></a> -->
+                           <form action="/home/storeComment" method="GET">
+                            <div class="dropdown" >
+                              <a class="dropdown-toggle" class="card-link" type="button" data-toggle="dropdown" style="background-color: transparent; border-color: transparent; color: #1c94e6"><i class="fa fa-comment">Comments</i></a>
+                              <ul class="dropdown-menu" style="width: 500px; max-height: 300px; overflow: scroll;">
+                                     <li style="margin: 10px">                         
+                                        <% for (var j = 0; j < comments.length;  j++){ %>
+                                           <% if (tweets[i].tweet_id.toString() == comments[j].comTweetId.toString() ){ %>
+                                           <a class="card-link" href="#">
+                                             <h6 class="card-title">
+                                                <%=comments[j].comUserName%>
+                                             </h6>
+                                           </a>
+                                            <p class="card-text">
+                                              <%=comments[j].comText%><br>
+                                            </p>
+                                            <hr>                        
+                                           <% } %>
+                                          <% } %>
+                                        </li>
+                                        <li style="margin: 10px">
+                                         <input type="hidden" name="tweet_id" value="<%=tweets[i].tweet_id%>">
+                                          <textarea
+                                                name="newComment"
+                                                class="form-control"
+                                                id="message"
+                                                rows="3"
+                                                placeholder="What are you thinking?"
+                                                 maxlength="280"
+                                              ></textarea>
+                                        </li>
+                                        <li style="margin: 10px">
+                                         <div class="btn-group">
+                                              <button type="submit" class="btn btn-primary">share</button>
+                                          </div>
+                                        </li>
+                                      </ul>
+                                    </div>  
+                                    </from>                        
+      
+             <a href="/home/retweet?tweet_id=<%=tweets[i].tweet_id%>&tweetText=<%=tweets[i].text%>" class="card-link"><i class="fa fa-mail-forward">Retweet</i></a>
+             </div>
+           </div>
+          <% } %>
+        </div>
+
+        <div class="col-md-3">
+          <% for (var m = 0; m < trends.length;  m++ ) {%> 
+          <div class="card gedf-card">
+            <div class="card-body">
+              <h5 class="card-title"><%=trends[m].username%></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%=(trends[m].text).substring(0, 10)%></h6>
+              <i class="fa fa-clock-o"><%=(trends[m].time).toString().substring(0, (trends[m].time).toString().length - 34)%></i>
+              <p class="card-text">
+               <%=trends[m].text%>
+              </p>
+            </div>
+          </div>   
+            <% } %>  
+        </div>
+      </div>
+    </div>
+
+    <script src="" async defer></script>
+  </body>
+</html>
